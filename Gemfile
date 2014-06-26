@@ -39,3 +39,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem "simple_calendar"
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
