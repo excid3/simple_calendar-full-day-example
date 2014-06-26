@@ -1,27 +1,16 @@
 <h1>Listing events</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Starts at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= week_calendar events: @events do |day, events| %>
+  <% start = day.beginning_of_day %>
+  <% ending = day.end_of_day %>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.starts_at %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% while start < ending do %>
+    <div class="day-hour">
+      <%= start.strftime("%l%P") %>
+    </div>
 
-<br>
+    <% start += 1.hour %>
+  <% end %>
+<% end %>
 
 <%= link_to 'New Event', new_event_path %>

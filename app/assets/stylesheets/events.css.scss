@@ -1,3 +1,18 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  width: 100%;
+}
+
+.day {
+  width: 14.3%;
+}
+
+.day-hour {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  min-height: 40px;
+  padding: 4px;
+}
